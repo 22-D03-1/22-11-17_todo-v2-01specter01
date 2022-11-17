@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Form from "./Form";
 import "./App.css";
 
@@ -13,7 +13,7 @@ function App() {
             />
             <div>
                 {todos.map(({ text }) => (
-                    <div>{text}</div>
+                    <div key={text}>{text}</div>
                 ))}
             </div>
         </div>
