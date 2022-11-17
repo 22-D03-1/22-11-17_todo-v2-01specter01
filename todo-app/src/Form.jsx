@@ -24,7 +24,7 @@ export default ({ onSubmit }) => {
         >
             {" "}
             <h1>My todo List</h1>
-            <input placeholder="wright the todos" {...text} />
+            <input placeholder="wright the todos and press enter" {...text} />
         </Form>
     );
 };

@@ -4,6 +4,17 @@ import "./App.css";
 
 export default function App() {
     const [todos, setTodos] = useState([]);
+    const [editTodo, setEditTodo] = useState(null);
+
+    const handleChange = (todo) => {
+        setTodos(
+            todos.map((i) => {
+                if (i.id === todo.id) {
+                    return { ...i, complete: !i.compleate };
+                }
+            })
+        );
+    };
 
     const toggleComplete = (i) =>
         setTodos(
@@ -23,6 +34,7 @@ export default function App() {
                 onSubmit={(text) =>
                     setTodos([{ text, complete: false }, ...todos])
                 }
+                setEditTodo={setEditTodo}
             />
             <div>
                 {todos.map(({ text, complete }, i) => (
@@ -37,7 +49,9 @@ export default function App() {
                             <li
                                 style={{
                                     border: "2px solid black",
+                                    borderRadius: "5px",
                                     alignContent: "space-between",
+                                    marginTop: "1rem",
                                 }}
                             >
                                 <span
