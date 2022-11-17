@@ -34,7 +34,34 @@ export default function App() {
                             textDecoration: complete ? "line-through" : "",
                         }}
                     >
-                        {text}
+                        <ul>
+                            <li
+                                style={{
+                                    border: "2px solid black",
+                                    alignContent: "space-between",
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        margin: "60px",
+                                    }}
+                                >
+                                    {text}
+                                </span>
+
+                                <button className="button-compleate task-button">
+                                    <i className="fa fa-check-circle"></i>
+                                </button>
+                                <button
+                                    style={{
+                                        margin: "10px",
+                                    }}
+                                    className="button-edit task-button"
+                                >
+                                    <i className="fa fa-edit"></i>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 ))}
             </div>
