@@ -11,10 +11,6 @@ const useImputValue = (initialValue) => {
     };
 };
 
-const isItChecked = () => {
-    
-}
-
 export default ({ onSubmit }) => {
     const { resetValue, ...text } = useImputValue("");
 
@@ -28,11 +24,7 @@ export default ({ onSubmit }) => {
         >
             {" "}
             <h1>My todo List</h1>
-            <input
-                placeholder="wright the todos"
-                checked={isItChecked}
-                {...text}
-            />
+            <input placeholder="wright the todos" {...text} />
         </Form>
     );
 };
