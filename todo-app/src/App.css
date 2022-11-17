@@ -3,8 +3,11 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-    background: rgb(174, 187, 175);
+    background: #355270;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(29, 29, 29), 10px 10px 15px rgb(56, 56, 56);
 }
 body {
-    background-color: rgb(255, 221, 159);
+    background-color: rgb(213, 187, 139);
+    color: rgb(199, 199, 199);
 }
