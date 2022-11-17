@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Form from "react-bootstrap/Form";
 
 const useImputValue = (initialValue) => {
     const [value, setValue] = useState(initialValue);
@@ -10,11 +11,15 @@ const useImputValue = (initialValue) => {
     };
 };
 
+const isItChecked = () => {
+    
+}
+
 export default ({ onSubmit }) => {
     const { resetValue, ...text } = useImputValue("");
 
     return (
-        <form
+        <Form
             onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(text.value);
@@ -23,7 +28,11 @@ export default ({ onSubmit }) => {
         >
             {" "}
             <h1>My todo List</h1>
-            <input placeholder="wright the todos" {...text} />
-        </form>
+            <input
+                placeholder="wright the todos"
+                checked={isItChecked}
+                {...text}
+            />
+        </Form>
     );
 };
