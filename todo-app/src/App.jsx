@@ -3,9 +3,19 @@ import Form from "./Form";
 import "./App.css";
 
 function App() {
+    const [todos, setTodos] = useState([]);
     return (
         <div className="App">
-            <Form />
+            <Form
+                onSubmit={(text) =>
+                    setTodos([{ text, compleate: false }, ...todos])
+                }
+            />
+            <div>
+                {todos.map(({ text }) => (
+                    <div>{text}</div>
+                ))}
+            </div>
         </div>
     );
 }

@@ -8,12 +8,18 @@ const useImputValue = (initialValue) => {
     };
 };
 
-export default () => {
+export default ({ onSubmit }) => {
     const text = useImputValue("");
+
     return (
-        <div>
+        <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit(text.value);
+            }}
+        >
             {" "}
             <input {...text} />
-        </div>
+        </form>
     );
 };
