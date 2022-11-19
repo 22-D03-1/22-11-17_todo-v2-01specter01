@@ -4,7 +4,6 @@ import "./App.css";
 
 export default function App() {
     const [todos, setTodos] = useState([]);
-    const [editTodo, setEditTodo] = useState(null);
 
     const handleChange = (todo) => {
         setTodos(
@@ -34,7 +33,6 @@ export default function App() {
                 onSubmit={(text) =>
                     setTodos([{ text, complete: false }, ...todos])
                 }
-                setEditTodo={setEditTodo}
             />
             <div>
                 {todos.map(({ text, complete }, i) => (
@@ -42,36 +40,17 @@ export default function App() {
                         key={text}
                         onClick={() => toggleComplete(i)}
                         style={{
-                            textDecoration: complete ? "line-through" : "",
+                            textDecoration: complete
+                                ? "line-through 3px orange"
+                                : "",
                         }}
                     >
                         <ul>
-                            <li
-                                style={{
-                                    border: "2px solid black",
-                                    borderRadius: "5px",
-                                    alignContent: "space-between",
-                                    marginTop: "1rem",
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        margin: "60px",
-                                    }}
-                                >
-                                    {text}
-                                </span>
+                            <li className="listOne">
+                                <span className="spanone">{text}</span>
 
                                 <button className="button-compleate task-button">
                                     <i className="fa fa-check-circle"></i>
-                                </button>
-                                <button
-                                    style={{
-                                        margin: "10px",
-                                    }}
-                                    className="button-edit task-button"
-                                >
-                                    <i className="fa fa-edit"></i>
                                 </button>
                             </li>
                         </ul>
